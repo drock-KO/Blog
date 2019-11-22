@@ -1,0 +1,14 @@
+
+<li>
+  <%= tweet.title %><br>
+  <%= link_to "詳細", "/tweets/#{tweet.id}", method: :get %>
+ <% if user_signed_in? && current_user.id == tweet.user_id %>
+  <%= link_to "削除", "/tweets/#{tweet.id}", method: :delete %>
+  <%= link_to "編集", "/tweets/#{tweet.id}/edit" %>
+ <% end %>
+</li>
+  <span>
+    <a href="">
+      <span>投稿者</span><%= tweet.user.nickname %>
+    </a>
+  </span>

@@ -1,0 +1,10 @@
+<p><%= @nickname %>さんのページ</p>
+<% @tweets.each do |tweet| %>
+<ul>
+ <a href="/tweets/#{@tweet.id}">
+   <li><%= tweet.title %></li>
+ </a>
+  <%= tweet.created_at %>
+  </ul>
+<% end %>
+<%= paginate(@tweets) %>

@@ -1,0 +1,5 @@
+<h1>Tweets#index</h1>
+<% @tweets.each do |tweet| %>
+ <%= render partial: "tweet", locals: { tweet: tweet } %>
+<% end %>
+<%= paginate(@tweets) %>

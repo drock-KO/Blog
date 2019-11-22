@@ -1,0 +1,11 @@
+<% if user_signed_in? && current_user.id == @tweet.user_id %>
+  <%= link_to "削除", "/tweets/#{@tweet.id}", method: :delete %>
+  <%= link_to "編集", "/tweets/#{@tweet.id}/edit" %>
+<% end %>
+
+<%= simple_format(@tweet.text) %>
+<span class="name">
+  <a href="/users/<%= @tweet.user.id %>">
+    <span>投稿者</span><%= @tweet.user.nickname %>
+  </a>
+</span>
